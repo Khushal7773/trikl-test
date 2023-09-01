@@ -43,9 +43,9 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="image-container">
-        <img src={imageURL} alt="Fetched" />
+    <div className="bg-slate-200">
+      <div className="relative w-full h-[90vh] flex justify-center">
+        <img src={imageURL} alt="Fetched" className='w-auto h-full object-cover' />
         <Draggable
           position={inputPosition}
           onDrag={handleDrag}
@@ -64,6 +64,9 @@ function App() {
               style={{
                 fontSize: '24px',
                 fontWeight: 'bold',
+                '@media (max-width: 640px)': {
+                  fontSize: '20px',
+                },
                 
               }}
             >
@@ -72,14 +75,15 @@ function App() {
           </div>
         </Draggable>
       </div>
-      <div>
+      <div className="flex justify-center m-2 sm:flex sm:justify-center">
         <input
           type="text"
           placeholder="Enter custom text"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          className="p-2 m-2 rounded-lg shadow-md  sm:w-auto"
         />
-        <button onClick={handleAddText}>Add Text</button>
+        <button className="m-2 p-2 bg-blue-500 rounded-lg shadow-md" onClick={handleAddText}>Add Text</button>
       </div>
     </div>
   );
