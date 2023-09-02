@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="bg-slate-200">
       <div className="relative w-full h-[90vh] flex justify-center">
-        <img src={imageURL} alt="Fetched" className='w-auto h-full object-cover' />
+        <img src={imageURL} alt="Fetched" className='w-full h-full object-contain' />
         <Draggable
           position={inputPosition}
           onDrag={handleDrag}
